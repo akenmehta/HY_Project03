@@ -132,9 +132,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.questions {
+  background: url(../assets/Parchment.png) no-repeat;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto; }
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto; }
+
+body {
+  background-color: rgba(224, 230, 40, 0.92); }
 
 header {
   text-align: center;
@@ -163,20 +172,29 @@ main {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(233, 215, 155, 0.75); }
+    background-color: rgba(233, 215, 155, 0.75);
+    border-radius: 10px;
+    transition: all 1s; }
+    main section:hover {
+      box-shadow: 2px 2px 20px #000; }
+  main p {
+    padding: 20px;
+    text-align: left; }
 
 .gameImage {
-  width: 100%; }
+  width: 100%;
+  padding: 10px; }
   .gameImage img {
     width: 100%;
-    display: block; }
+    display: block;
+    border-radius: 10px; }
 
 footer {
   text-align: center;
@@ -185,3 +203,14 @@ footer {
   footer p {
     color: rgba(219, 146, 0, 0.83);
     margin: 0; }
+
+.homeButton {
+  border: none;
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: #000;
+  color: rgba(219, 146, 0, 0.83);
+  transition: all 1s; }
+  .homeButton:hover {
+    color: #000;
+    background-color: rgba(219, 146, 0, 0.83); }

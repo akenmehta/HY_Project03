@@ -4,12 +4,14 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
+@import 'questions';
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-
+body{
+	background-color: rgba(224, 230, 40, 0.92);
+}
 header {
 	text-align: center;
 	background-color: black;
@@ -31,18 +33,29 @@ main  {
 		margin: 15px;
 		flex-grow: 1;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		flex-direction: column;
 		text-align: center;
 		background-color: rgba(233, 215, 155, 0.75);
+		border-radius: 10px;
+		transition: all 1s;
+		&:hover{
+			box-shadow: 2px 2px 20px #000;
+		}
+	}
+	p{
+		padding: 20px;
+		text-align: left;
 	}
 }
 
 .gameImage {
 	width: 100%;
+	padding: 10px;
 	img {
 		width: 100%;
 		display: block;
+		border-radius: 10px;
 	}
 }
 
@@ -53,5 +66,18 @@ footer {
 	p {
 		color: rgba(219, 146, 0, 0.83);
 		margin: 0;
+	}
+}
+
+.homeButton{
+	border: none;
+	padding: 10px 20px;
+	margin: 20px;
+	background-color: #000;
+	color: rgba(219, 146, 0, 0.83);
+	transition: all 1s;
+	&:hover{
+		color: #000;
+		background-color: rgba(219, 146, 0, 0.83);
 	}
 }
