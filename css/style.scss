@@ -10,10 +10,48 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	margin: 0 auto;
 }
 
+header {
+	text-align: center;
+	background-color: black;
+	padding: 20px 0;
+	h1 {
+		color: rgba(219, 146, 0, 0.83);
+		font-family: "Great Vibes", sans-serif;
+		font-size: 80px;
+		margin: 0;
+	}
+}
+
 main  {
+	padding: 50px 0;
 	display: flex;
+	justify-content: space-between;
 	section {
-		width: 33.3%;
+		width: calc(33.3% - 30px);
+		margin: 15px;
 		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		background-color: rgba(233, 215, 155, 0.75);
+	}
+}
+
+.gameImage {
+	width: 100%;
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+footer {
+	text-align: center;
+	background-color: black;
+	padding: 20px 0;
+	p {
+		color: rgba(219, 146, 0, 0.83);
+		margin: 0;
 	}
 }
