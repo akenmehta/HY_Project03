@@ -42,86 +42,98 @@ var houseQuestions = [
 		yellow: 'A dog or a cat: something loyal and kind.'
 	}
 ]
-var wandQuestions = {
-	question1: {
+var wandQuestions = [
+	{
 		question: '2. Which career would you pursue?',
 		red: 'Auror',
-		green: 'Death eater',
+		green: 'Death Eater',
 		blue: 'Professor',
 		yellow: 'Dragon tamer'
 	},
-	question2: {
+	{
 		question: 'How would you describe yourself?',
 		red: 'Brave, courageous, chivalrous',
 		green: 'Power hungry, leader, boss',
 		blue: 'Smart, hard working, focused',
 		yellow: 'Kind, funny, friendly',
 	},
-	question3: {
+	{
 		question: 'What is your favourite kind of spell?',
-		red: 'Jinx\'s',
-		green: 'Curse\'s',
-		blue: 'Hex\'s',
-		yellow: 'Charm\'s'
+		red: 'Jinxes',
+		green: 'Unforgivable Curses',
+		blue: 'Hexes',
+		yellow: 'Charms'
 	},
-	question4: {
+	{
 		question: 'What is your favorite subject?',
 		red: 'Transfiguration',
 		green: 'Defence against the dark arts',
 		blue: 'Potions',
 		yellow: 'Divination'
 	}
-}
-var petQuestions = {
-	question1: {
+]
+var petQuestions = [
+	{
 		question: 'What is your fav colour?',
 		red: 'White',
 		green: 'Silver',
 		blue: 'Black',
 		yellow: 'Yellow'
 	},
-	question2: {
+	{
 		question: 'Given a choice what would you rather do?',
 		red: 'Run',
 		green: 'Play with fire',
 		blue: 'Fly',
 		yellow: 'Eat'
 	}
-}
+]
 var questionCounter = 0;
 var redCounter = 0;
 var greenCounter = 0;
 var blueCounter = 0;
 var yellowCounter = 0;
 
+function quizGenerator(quizName){
+	var userAnswer = $('input:checked').val();
 
+	if(userAnswer === 'red')
+		redCounter++;
+	else if(userAnswer === 'blue')
+		blueCounter++;
+	else if(userAnswer === 'green')
+		greenCounter++;
+	else if(userAnswer === 'yellow')
+		yellowCounter++;
 
+	if (questionCounter < quizName.length) {
+		$('.questions h2').text(quizName[questionCounter].question);
+		$('label[for = "answer1"]').text(quizName[questionCounter].red);
+		$('label[for = "answer2"]').text(quizName[questionCounter].green);
+		$('label[for = "answer3"]').text(quizName[questionCounter].blue);
+		$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
+		
+		questionCounter++;
+		console.log(userAnswer, questionCounter);
+		console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+	} 
+}
+
+function resetCounters(){
+	questionCounter = 0;
+	redCounter = 0;
+	greenCounter = 0;
+	blueCounter = 0;
+	yellowCounter = 0;
+}
 $(document).ready(function(){
 
-
 	$('.house-next').on('click', function(){
-		if (questionCounter < houseQuestions.length) {
-			$('.questions h2').text(houseQuestions[questionCounter].question);
-			$('label[for = "answer1"]').text(houseQuestions[questionCounter].red);
-			$('label[for = "answer2"]').text(houseQuestions[questionCounter].green);
-			$('label[for = "answer3"]').text(houseQuestions[questionCounter].blue);
-			$('label[for = "answer4"]').text(houseQuestions[questionCounter].yellow);
-			
-			var userAnswer = $('input:checked').val();
-			if(userAnswer === 'red')
-				redCounter++;
-			else if(userAnswer === 'blue')
-				blueCounter++;
-			else if(userAnswer === 'green')
-				greenCounter++;
-			else if(userAnswer === 'yellow')
-				yellowCounter++;
-
-			questionCounter++;
-			console.log(userAnswer, questionCounter);
-			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
-		}
-		else {
+		if (questionCounter !== houseQuestions.length) {
+			quizGenerator(houseQuestions);
+		} 
+		
+		else{
 			var winningHouse = [
 				{
 					house: 'gryffindor',
@@ -146,10 +158,87 @@ $(document).ready(function(){
 			});
 
 			$('body').html(`<h1>You're in ${winningHouse[0].house.toUpperCase()}!</h1>`);
+			console.log(winningHouse[0]);
 
-			console.log(winningHouse[0])
+			resetCounters();
+			console.log(questionCounter);
+			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+			
 		}		
 	});
+
+	$('.wand-next').on('click', function(){
+		if (questionCounter !== wandQuestions.length) {
+			quizGenerator(wandQuestions);
+		}
+		else{
+			var winningWand = [
+				{
+					wand: 'Holly and Phoenix feather',
+					counter: redCounter
+				},
+				{
+					wand: 'Hornbeam and Dragon heartstring',
+					counter: blueCounter
+				},
+				{
+					wand: 'Elder and Basilisk fang',
+					counter: greenCounter
+				},
+				{
+					wand: 'Maple and Troll whisker',
+					counter: yellowCounter
+				}
+			];
+			winningWand.sort(function(a,b) {
+	  			return b.counter - a.counter
+			});
+
+			$('body').html(`<h1>You're in ${winningWand[0].wand.toUpperCase()}!</h1>`);
+			console.log(winningWand[0]);
+
+			resetCounters();
+			console.log(questionCounter);
+			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+		}
+	});
+
+	$('.pet-next').on('click', function(){
+		if (questionCounter !== petQuestions.length) {
+			quizGenerator(petQuestions);
+		}
+		else{
+			var winningPet = [
+				{
+					pet: 'Blast-Ended Skrewt',
+					counter: redCounter
+				},
+				{
+					pet: 'Hippogriff',
+					counter: blueCounter
+				},
+				{
+					pet: 'Dragon',
+					counter: greenCounter
+				},
+				{
+					pet: 'Toad',
+					counter: yellowCounter
+				}
+			];
+			winningPet.sort(function(a,b) {
+	  			return b.counter - a.counter
+			});
+
+			$('body').html(`<h1>You're in ${winningPet[0].pet.toUpperCase()}!</h1>`);
+			console.log(winningPet[0]);
+
+			resetCounters();
+			console.log(questionCounter);
+			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+		}
+	});
+
 });
 
 
