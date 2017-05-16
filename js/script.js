@@ -1,4 +1,4 @@
-var questions = {
+var houseQuestions = {
 	question1: {
 		question: '2. You enter an enchanted garden. What would you be most curious to examine first?',
 		red: ' The statue of an old wizard with a strangely twinkling eye',
@@ -42,6 +42,52 @@ var questions = {
 		yellow: 'A dog or a cat: something loyal and kind.'
 	}
 }
+var wandQuestions = {
+	question1: {
+		question: '2. Which career would you pursue?',
+		red: 'Auror',
+		green: 'Death eater',
+		blue: 'Professor',
+		yellow: 'Dragon tamer'
+	},
+	question2: {
+		question: 'How would you describe yourself?',
+		red: 'Brave, courageous, chivalrous',
+		green: 'Power hungry, leader, boss',
+		blue: 'Smart, hard working, focused',
+		yellow: 'Kind, funny, friendly',
+	},
+	question3: {
+		question: 'What is your favourite kind of spell?',
+		red: 'Jinx\'s',
+		green: 'Curse\'s',
+		blue: 'Hex\'s',
+		yellow: 'Charm\'s'
+	},
+	question4: {
+		question: '',
+		red: '',
+		green: '',
+		blue: '',
+		yellow: ''
+	}
+}
+var petQuestions = {
+	question1: {
+		question: 'What is your fav colour?',
+		red: 'White',
+		green: 'Silver',
+		blue: 'Black',
+		yellow: 'Yellow'
+	},
+	question2: {
+		question: 'Given a choice what would you rather do?',
+		red: 'Run',
+		green: 'Play with fire',
+		blue: 'Fly',
+		yellow: 'Eat'
+	}
+}
 var questionCounter = 0;
 var redCounter = 0;
 var greenCounter = 0;
@@ -55,11 +101,11 @@ $(document).ready(function(){
 		if (questionCounter < 6) {
 			questionCounter++;
 
-			$('.questions h2').text(questions['question' + questionCounter].question);
-			$('label[for = "answer1"]').text(questions['question' + questionCounter].red);
-			$('label[for = "answer2"]').text(questions['question' + questionCounter].green);
-			$('label[for = "answer3"]').text(questions['question' + questionCounter].blue);
-			$('label[for = "answer4"]').text(questions['question' + questionCounter].yellow);
+			$('.houseQuestions h2').text(houseQuestions['question' + questionCounter].question);
+			$('label[for = "answer1"]').text(houseQuestions['question' + questionCounter].red);
+			$('label[for = "answer2"]').text(houseQuestions['question' + questionCounter].green);
+			$('label[for = "answer3"]').text(houseQuestions['question' + questionCounter].blue);
+			$('label[for = "answer4"]').text(houseQuestions['question' + questionCounter].yellow);
 			
 			var userAnswer = $('input:checked').val();
 			if(userAnswer === 'red')
@@ -78,22 +124,23 @@ $(document).ready(function(){
 		else {
 			var winningHouse = [
 				{
-				house: 'gryffindor',
-				counter: redCounter
+					house: 'gryffindor',
+					counter: redCounter
 				},
 				{
-				house: 'ravenclaw',
-				counter: blueCounter
+					house: 'ravenclaw',
+					counter: blueCounter
 				},
 				{
-				house: 'slytherin',
-				counter: greenCounter
+					house: 'slytherin',
+					counter: greenCounter
 				},
 				{
-				house: 'hufflepuff',
-				counter: yellowCounter
+					house: 'hufflepuff',
+					counter: yellowCounter
 				}
 			];
+
 			winningHouse.sort(function(a,b) {
 	  			return b.counter - a.counter
 			});
@@ -101,12 +148,8 @@ $(document).ready(function(){
 			$('body').html(`<h1>You're in ${winningHouse[0].house.toUpperCase()}!</h1>`);
 
 			console.log(winningHouse[0])
-		}
-		
+		}		
 	});
-
-	
-
 });
 
 
