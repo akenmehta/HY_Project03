@@ -106,17 +106,17 @@ function quizGenerator(quizName){
 	else if(userAnswer === 'yellow')
 		yellowCounter++;
 
-	if (questionCounter < quizName.length) {
-		$('.questions h2').text(quizName[questionCounter].question);
-		$('label[for = "answer1"]').text(quizName[questionCounter].red);
-		$('label[for = "answer2"]').text(quizName[questionCounter].green);
-		$('label[for = "answer3"]').text(quizName[questionCounter].blue);
-		$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
-		
-		questionCounter++;
-		console.log(userAnswer, questionCounter);
-		console.log(redCounter, blueCounter, greenCounter, yellowCounter);
-	} 
+	
+	$('.questions h2').text(quizName[questionCounter].question);
+	$('label[for = "answer1"]').text(quizName[questionCounter].red);
+	$('label[for = "answer2"]').text(quizName[questionCounter].green);
+	$('label[for = "answer3"]').text(quizName[questionCounter].blue);
+	$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
+	
+	questionCounter++;
+	console.log(userAnswer, questionCounter);
+	console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+
 }
 
 function resetCounters(){
@@ -126,6 +126,19 @@ function resetCounters(){
 	blueCounter = 0;
 	yellowCounter = 0;
 }
+
+function randomizeWinner (quizName, quizType) {
+	var winnerList = [];
+	for (var key in quizName) {
+		if (quizName[key].counter === quizName[0].counter) {
+			winnerList.push(quizName[key]);
+		}
+	}
+	var finalWinner = winnerList[Math.floor(Math.random() * winnerList.length)][quizType];
+	console.log(winnerList, finalWinner);
+	return finalWinner;
+}
+
 $(document).ready(function(){
 
 	$('.house-next').on('click', function(){
@@ -157,12 +170,15 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			$('body').html(`<h1>You're in ${winningHouse[0].house.toUpperCase()}!</h1>`);
-			console.log(winningHouse[0]);
+			var finalWinner = randomizeWinner(winningHouse, 'house');
+			console.log(finalWinner);
+
+			$('body').html(`<h1>You're in ${finalWinner}!</h1>`);
 
 			resetCounters();
 			console.log(questionCounter);
 			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+			
 			
 		}		
 	});
@@ -194,8 +210,10 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			$('body').html(`<h1>You're in ${winningWand[0].wand.toUpperCase()}!</h1>`);
-			console.log(winningWand[0]);
+			var finalWinner = randomizeWinner(winningWand, 'wand');
+			console.log(finalWinner);
+
+			$('body').html(`<h1>You're wand is ${finalWinner}!</h1>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -230,8 +248,10 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			$('body').html(`<h1>You're in ${winningPet[0].pet.toUpperCase()}!</h1>`);
-			console.log(winningPet[0]);
+			var finalWinner = randomizeWinner(winningPet, 'pet');
+			console.log(finalWinner);
+
+			$('body').html(`<h1>You have chosen ${finalWinner}!</h1>`);
 
 			resetCounters();
 			console.log(questionCounter);
