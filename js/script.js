@@ -94,15 +94,23 @@ var greenCounter = 0;
 var blueCounter = 0;
 var yellowCounter = 0;
 
+var answerType = ['red', 'blue', 'green', 'yellow'];
+
 function quizGenerator(quizName){
 	quizCounters();
 
+	var randomAnswers = randomizeAnswers(answerType);
+
+	console.log(randomArray);
+
 	$('.questions h2').text(quizName[questionCounter].question);
-	$('label[for = "answer1"]').text(quizName[questionCounter].red);
-	$('label[for = "answer2"]').text(quizName[questionCounter].green);
-	$('label[for = "answer3"]').text(quizName[questionCounter].blue);
-	$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
+	$('label[for = "answer1"]').text(quizName[questionCounter][randomAnswers[0] ] );
+	$('label[for = "answer2"]').text(quizName[questionCounter][randomAnswers[1] ] );
+	$('label[for = "answer3"]').text(quizName[questionCounter][randomAnswers[2] ] );
+	$('label[for = "answer4"]').text(quizName[questionCounter][randomAnswers[3] ] );
 	
+	randomAnswers = [];
+	answerType = ['red', 'blue', 'green', 'yellow'];
 	questionCounter++;
 	console.log(questionCounter);
 	console.log(redCounter, blueCounter, greenCounter, yellowCounter);
@@ -137,6 +145,18 @@ function randomizeWinner (quizName, quizType) {
 	var finalWinner = winnerList[Math.floor(Math.random() * winnerList.length)][quizType];
 	console.log(winnerList, finalWinner);
 	return finalWinner;
+}
+
+function randomizeAnswers(array) {
+	var randomizedArray = [];
+	
+	for (var i = array.length; i > 0; i = i -1) {
+		var randomIndex = Math.floor(Math.random() * array.length)
+		randomizedArray.push(array[randomIndex]);
+		array.splice(randomIndex, 1);
+	}
+	
+	return randomizedArray;
 }
 
 $(document).ready(function(){
