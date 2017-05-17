@@ -88,20 +88,74 @@ var petQuestions = [
 		yellow: 'Eat'
 	}
 ]
+var quotes = [
+	{
+		quote: 'It does not do to dwell on dreams and forget to live.',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'To the well-organized mind, death is but the next great adventure.',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'It is our choices, Harry, that show what we truly are, far more than our abilities.',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'Just because you have the emotional range of a teaspoon doesn’t mean we all have.',
+		author: '- Hermione Granger'
+	},
+	{
+		quote: 'Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'Words are in my not-so-humble opinion, the most inexhaustible form of magic we have, capable both of inflicting injury and remedying it',
+		author: '- Albus Dumbledore'
+	},
+	{
+		quote: 'We do not need magic to transform our world. We carry all of the power we need inside ourselves already',
+		author: '- J.K. Rowling'
+	},
+	{
+		quote: 'Whether you come back by page or by the big screen, Hogwarts will always be there to welcome you home',
+		author: '- J.K. Rowling'
+	},
+	{
+		quote: 'You sort of start thinking anything\'s possible if you\'ve got enough nerve.',
+		author: '- J.K. Rowling'
+	},
+	{
+		quote: 'Crikey, I\'d love a dragon for a pet.',
+		author: '- Rubeus Hagrid'
+	}
+];
+
+var randomHomeQuote = randomQuotesIndex();
 var questionCounter = 0;
 var redCounter = 0;
 var greenCounter = 0;
 var blueCounter = 0;
-var yellowCounter = 0;
-
+var yellowCounter = 0; 
 var answerType = ['red', 'blue', 'green', 'yellow'];
 
+// returns random quotes object from the quotes array
+function randomQuotesIndex(){
+	var randomNum = Math.floor(Math.random() * quotes.length);
+	var randomQuote = quotes[randomNum];
+
+	return randomQuote;
+}
+
+//Populates questions and answer from the selected 'questions' arrays
 function quizGenerator(quizName){
 	quizCounters();
-
+	//randomizing the order of the answers
 	var randomAnswers = randomizeAnswers(answerType);
-
-	console.log(randomArray);
 
 	$('.questions h2').text(quizName[questionCounter].question);
 	$('label[for = "answer1"]').text(quizName[questionCounter][randomAnswers[0] ] );
@@ -109,13 +163,12 @@ function quizGenerator(quizName){
 	$('label[for = "answer3"]').text(quizName[questionCounter][randomAnswers[2] ] );
 	$('label[for = "answer4"]').text(quizName[questionCounter][randomAnswers[3] ] );
 	
+	//resetting the answer arrays for the next question
 	randomAnswers = [];
 	answerType = ['red', 'blue', 'green', 'yellow'];
-	questionCounter++;
-	console.log(questionCounter);
-	console.log(redCounter, blueCounter, greenCounter, yellowCounter);
-
+	questionCounter++; 
 }
+//Keeps track of the user answers
 function quizCounters(){
 	var userAnswer = $('input:checked').val();
 	if(userAnswer === 'red')
@@ -127,6 +180,7 @@ function quizCounters(){
 	else if(userAnswer === 'yellow')
 		yellowCounter++;
 }
+
 function resetCounters(){
 	questionCounter = 0;
 	redCounter = 0;
@@ -135,18 +189,20 @@ function resetCounters(){
 	yellowCounter = 0;
 }
 
-function randomizeWinner (quizName, quizType) {
+//In case of a tie, randomizes the winners from the list of potential winners
+function randomizeWinner (quizName) {
 	var winnerList = [];
 	for (var key in quizName) {
 		if (quizName[key].counter === quizName[0].counter) {
 			winnerList.push(quizName[key]);
 		}
 	}
-	var finalWinner = winnerList[Math.floor(Math.random() * winnerList.length)][quizType];
-	console.log(winnerList, finalWinner);
+	var finalWinner = winnerList[Math.floor(Math.random() * winnerList.length)];
+	console.log(finalWinner);
 	return finalWinner;
 }
 
+//randomizing the order of the answers
 function randomizeAnswers(array) {
 	var randomizedArray = [];
 	
@@ -161,28 +217,36 @@ function randomizeAnswers(array) {
 
 $(document).ready(function(){
 
+	$('.magicWriting h2').text( randomHomeQuote.quote);
+
+	$('.magicWriting span').text( randomHomeQuote.author);
+
 	$('.house-next').on('click', function(){
 		if (questionCounter !== houseQuestions.length) {
 			quizGenerator(houseQuestions);
 		} 
-		
 		else{
 			quizCounters();
+
 			var winningHouse = [
 				{
 					house: 'gryffindor',
+					image: './assets/gryffindor.png',
 					counter: redCounter
 				},
 				{
 					house: 'ravenclaw',
+					image: './assets/ravenclaw.png',
 					counter: blueCounter
 				},
 				{
 					house: 'slytherin',
+					image: './assets/slytherin.png',
 					counter: greenCounter
 				},
 				{
 					house: 'hufflepuff',
+					image: './assets/hufflepuff.png',
 					counter: yellowCounter
 				}
 			];
@@ -191,10 +255,11 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			var finalWinner = randomizeWinner(winningHouse, 'house');
-			console.log(finalWinner);
+			var finalWinner = randomizeWinner(winningHouse);
 
-			$('body').html(`<h1>You're in ${finalWinner}!</h1>`);
+			$('div.questions').removeClass('questions-background');
+			$('.questions').html(`<h2>Congratulations! You're in ${finalWinner.house}!</h2>`);
+			$('.questions').append(`<img src="${finalWinner.image}">`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -213,18 +278,22 @@ $(document).ready(function(){
 			var winningWand = [
 				{
 					wand: 'Holly and Phoenix feather',
+					image: './assets/wand.png',
 					counter: redCounter
 				},
 				{
 					wand: 'Hornbeam and Dragon heartstring',
+					image: './assets/wand.png',
 					counter: blueCounter
 				},
 				{
 					wand: 'Elder and Basilisk fang',
+					image: './assets/wand.png',
 					counter: greenCounter
 				},
 				{
 					wand: 'Maple and Troll whisker',
+					image: './assets/wand.png',
 					counter: yellowCounter
 				}
 			];
@@ -232,10 +301,11 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			var finalWinner = randomizeWinner(winningWand, 'wand');
-			console.log(finalWinner);
+			var finalWinner = randomizeWinner(winningWand);
 
-			$('body').html(`<h1>You're wand is ${finalWinner}!</h1>`);
+			$('div.questions').removeClass('questions-background');
+			$('.questions').html(`<h2>Congratulations! This wand is chosen you: "${finalWinner.wand}"!</h2>`);
+			$('.questions').append(`<img src="${finalWinner.image}">`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -252,18 +322,22 @@ $(document).ready(function(){
 			var winningPet = [
 				{
 					pet: 'Blast-Ended Skrewt',
+					image: './assets/Skrewt.png',
 					counter: redCounter
 				},
 				{
 					pet: 'Hippogriff',
+					image: './assets/Hippogrif.png',
 					counter: blueCounter
 				},
 				{
 					pet: 'Dragon',
+					image: './assets/dragon.jpg',
 					counter: greenCounter
 				},
 				{
 					pet: 'Toad',
+					image: './assets/Toad.jpg',
 					counter: yellowCounter
 				}
 			];
@@ -271,10 +345,11 @@ $(document).ready(function(){
 	  			return b.counter - a.counter
 			});
 
-			var finalWinner = randomizeWinner(winningPet, 'pet');
-			console.log(finalWinner);
+			var finalWinner = randomizeWinner(winningPet);
 
-			$('body').html(`<h1>You have chosen ${finalWinner}!</h1>`);
+			$('div.questions').removeClass('questions-background');
+			$('.questions').html(`<h2>Congratulations! You have chosen ${finalWinner.pet} as your life long partner!</h2>`);
+			$('.questions').append(`<img src="${finalWinner.image}">`);
 
 			resetCounters();
 			console.log(questionCounter);

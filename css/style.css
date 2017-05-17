@@ -133,10 +133,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 .questions {
-  background: url(../assets/Parchment.png) no-repeat;
   width: 500px;
   height: 500px;
   margin: 0 auto; }
+
+.questions-background {
+  background: url(../assets/Parchment.png) no-repeat; }
 
 .wrapper {
   max-width: 1200px;
