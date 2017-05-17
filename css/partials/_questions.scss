@@ -1,8 +1,56 @@
 .questions{
-	width: 500px;
-	height: 500px;
+	width: 650px;
 	margin: 0 auto;
+	border: 1px solid red;
+	padding: 20px 50px;
+	form {
+		padding: 0 20px;
+	}
+	h2 {
+		font-family: 'Cabin', sans-serif;
+		font-weight: normal;
+	}
+	label {
+		font-family: 'Cabin', sans-serif;
+		font-size: 20px;
+	}
+	button {
+		border: none;
+		padding: 10px 20px;
+		margin: 20px;
+		background-color: #000;
+		color: $global-gold;
+		transition: all 1s;
+	}
+	.answerContainer {
+		margin: 20px;
+	}
+	input {
+		margin-right: 10px;
+	}
+	h3 {
+		font-size: 25px;
+		font-weight: normal;
+		font-family: $global-questions-font;
+		.houseWinner {
+			
+		}
+		.wandWinner {
+
+		}
+		.petWinner {
+			font-family: $header-footer-font;
+			font-size: 35px;
+			margin: 0 
+		}
+	}
+	img {
+		margin: 0 auto;
+		display: block;
+		border-radius: 30%;
+	}
 }
 .questions-background{
 	background: url(../assets/Parchment.png) no-repeat;
+	background-size: contain;
 }

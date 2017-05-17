@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>HP Quiz</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Great+Vibes" rel="stylesheet">
 </head>
 <body>
 
@@ -12,22 +13,30 @@
     </header>
 
 	<div class="questions questions-background">
-	    <h2>1.If you have been sorted, what house are you in? If not, then which is your favorite?</h2>
+	    <h2>If you have been sorted, what house are you in? If not, then which is your favorite?</h2>
 	    <form class="options">
-	        <input id="answer1"	class="option" type="radio" name="question1" value="red"> 
-	        <label for="answer1">Ravenclaw</label><br>
+	    	<div class="answerContainer">
+		        <input id="answer1"	class="option" type="radio" name="question1" value="red"> 
+		        <label for="answer1">Ravenclaw</label>
+	    	</div>
 	        
-	        <input id="answer2" class="option" type="radio" name="question1" value="blue">
-	        <label for="answer2">Gryffindor</label><br>
-
-	        <input id="answer3" class="option" type="radio" name="question1" value="green">
-	        <label for="answer3">Slytherin</label><br>
-
-	        <input id="answer4" class="option" type="radio" name="question1" value="yellow">
-	        <label for="answer4">Hufflepuff</label><br>
+	        <div class="answerContainer">
+		        <input id="answer2" class="option" type="radio" name="question1" value="blue">
+		        <label for="answer2">Gryffindor</label>
+	        </div>
+			
+			<div class="answerContainer">
+		        <input id="answer3" class="option" type="radio" name="question1" value="green">
+		        <label for="answer3">Slytherin</label>
+	        </div>
+			
+			<div class="answerContainer">
+		        <input id="answer4" class="option" type="radio" name="question1" value="yellow">
+		        <label for="answer4">Hufflepuff</label>
+	        </div>
 	    </form>
 
-	    <button class="house-next">NEXT</button>
+	    <button class="wand-next">NEXT</button>
 	</div>
 
 	<footer>

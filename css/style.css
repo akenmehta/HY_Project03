@@ -133,29 +133,71 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 .questions {
-  width: 500px;
-  height: 500px;
-  margin: 0 auto; }
+  width: 650px;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 20px 50px; }
+  .questions form {
+    padding: 0 20px; }
+  .questions h2 {
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal; }
+  .questions label {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px; }
+  .questions button {
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #000;
+    color: rgba(219, 146, 0, 0.83);
+    transition: all 1s; }
+  .questions .answerContainer {
+    margin: 20px; }
+  .questions input {
+    margin-right: 10px; }
+  .questions h3 {
+    font-size: 25px;
+    font-weight: normal;
+    font-family: "Cabin", sans-serif; }
+    .questions h3 .petWinner {
+      font-family: "Great Vibes", sans-serif;
+      font-size: 35px;
+      margin: 0; }
+  .questions img {
+    margin: 0 auto;
+    display: block;
+    border-radius: 30%; }
 
 .questions-background {
-  background: url(../assets/Parchment.png) no-repeat; }
+  background: url(../assets/Parchment.png) no-repeat;
+  background-size: contain; }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto; }
 
 body {
-  background-color: rgba(224, 230, 40, 0.92); }
+  background-color: rgba(151, 2, 2, 0.93); }
 
 header {
   text-align: center;
   background-color: black;
-  padding: 20px 0; }
+  padding: 20px 0;
+  position: relative; }
   header h1 {
     color: rgba(219, 146, 0, 0.83);
     font-family: "Great Vibes", sans-serif;
     font-size: 80px;
-    margin: 0; }
+    margin: 0;
+    widows: 100%; }
+  header .logoContainer {
+    width: 100px;
+    position: absolute;
+    top: 25px;
+    left: 25px; }
+    header .logoContainer img {
+      width: 100%; }
 
 main {
   padding: 50px 0;
@@ -181,14 +223,17 @@ main {
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(233, 215, 155, 0.75);
+    background-color: rgba(207, 197, 7, 0.69);
     border-radius: 10px;
     transition: all 1s; }
     main section:hover {
       box-shadow: 2px 2px 20px #000; }
   main p {
     padding: 20px;
-    text-align: left; }
+    text-align: left;
+    font-family: "Cabin", sans-serif;
+    font-size: 20px;
+    line-height: 1.4em; }
 
 .gameImage {
   width: 100%;
@@ -196,23 +241,43 @@ main {
   .gameImage img {
     width: 100%;
     display: block;
-    border-radius: 10px; }
+    border-radius: 10px;
+    border: 5px solid #333; }
 
 footer {
   text-align: center;
   background-color: black;
   padding: 20px 0; }
   footer p {
+    font-family: "Great Vibes", sans-serif;
+    font-size: 20px;
     color: rgba(219, 146, 0, 0.83);
     margin: 0; }
 
 .homeButton {
+  font-size: 20px;
+  font-family: "Cabin", sans-serif;
+  text-transform: uppercase;
   border: none;
   padding: 10px 20px;
   margin: 20px;
   background-color: #000;
   color: rgba(219, 146, 0, 0.83);
   transition: all 1s; }
-  .homeButton:hover {
-    color: #000;
-    background-color: rgba(219, 146, 0, 0.83); }
+
+.magicWriting {
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgba(0, 122, 49, 0.84);
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 20px;
+  text-align: center; }
+  .magicWriting h2 {
+    font-family: "Satisfy", sans-serif;
+    font-size: 35px; }
+  .magicWriting span {
+    text-align: right;
+    display: block;
+    font-size: 20px;
+    font-family: "Cabin", sans-serif; }

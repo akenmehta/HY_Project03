@@ -1,23 +1,34 @@
 @import 'partials/setup';
-@import 'partials/questions';
 @import 'partials/variables';
+@import 'partials/questions';
 
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
 }
 body{
-	background-color: rgba(224, 230, 40, 0.92);
+	background-color: rgba(151, 2, 2, 0.93);
 }
 header {
 	text-align: center;
 	background-color: black;
 	padding: 20px 0;
+	position: relative;
 	h1 {
 		color: $global-gold;
-		font-family: "Great Vibes", sans-serif;
+		font-family: $header-footer-font;
 		font-size: 80px;
 		margin: 0;
+		widows: 100%;
+	}
+	.logoContainer {
+		width: 100px;
+		position: absolute; 
+		top: 25px;
+		left: 25px;
+		img {
+			width: 100%;
+		}
 	}
 }
 main  {
@@ -32,7 +43,7 @@ main  {
 		justify-content: space-between;
 		flex-direction: column;
 		text-align: center;
-		background-color: rgba(233, 215, 155, 0.75);
+		background-color: rgba(207, 197, 7, 0.69);
 		border-radius: 10px;
 		transition: all 1s;
 		&:hover{
@@ -42,6 +53,9 @@ main  {
 	p{
 		padding: 20px;
 		text-align: left;
+		font-family: $global-questions-font;
+		font-size: 20px;
+		line-height: 1.4em;
 	}
 }
 
@@ -52,6 +66,7 @@ main  {
 		width: 100%;
 		display: block;
 		border-radius: 10px;
+		border: 5px solid #333;
 	}
 }
 
@@ -60,21 +75,42 @@ footer {
 	background-color: black;
 	padding: 20px 0;
 	p {
+		font-family: $header-footer-font;
+		font-size: 20px;
 		color: $global-gold;
 		margin: 0;
 	}
 }
 
 .homeButton{
+	font-size: 20px;
+	font-family: $global-questions-font;
+	text-transform: uppercase;
 	border: none;
 	padding: 10px 20px;
 	margin: 20px;
 	background-color: #000;
 	color: $global-gold;
 	transition: all 1s;
-	&:hover{
-		color: #000;
-		background-color: $global-gold;
+}
+
+.magicWriting {
+	width: 80%;
+	border-radius: 10px;
+	background-color: rgba(0, 122, 49, 0.84);
+	margin: 0 auto;
+	margin-top: 70px;
+	padding: 20px;
+	text-align: center;
+	h2 {
+		font-family: "Satisfy", sans-serif;
+		font-size: 35px;
+	}
+	span {
+		text-align: right;
+		display: block;
+		font-size: 20px;
+		font-family: $global-questions-font;
 	}
 }
 

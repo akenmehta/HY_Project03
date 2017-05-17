@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>HP Quiz</title>
 	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Great+Vibes" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -11,19 +12,27 @@
     </header>
 
     <div class="questions  questions-background">
-        <h2>1. Given the choice, would you rather invent a potion that would guarantee you:</h2>
+        <h2>Given the choice, would you rather invent a potion that would guarantee you:</h2>
         <form class="options">
-            <input id="answer1"	class="option" type="radio" name="question1" value="red"> 
-            <label for="answer1">Glory</label><br>
+            <div class="answerContainer">
+                <input id="answer1"	class="option" type="radio" name="question1" value="red"> 
+                <label for="answer1">Glory</label>
+            </div>
+
+            <div class="answerContainer">
+                <input id="answer2" class="option" type="radio" name="question1" value="blue">
+                <label for="answer2">Wisdom</label>
+            </div>
             
-            <input id="answer2" class="option" type="radio" name="question1" value="blue">
-            <label for="answer2">Wisdom</label><br>
+            <div class="answerContainer">
+                <input id="answer3" class="option" type="radio" name="question1" value="green">
+                <label for="answer3">Power</label>
+            </div>
 
-            <input id="answer3" class="option" type="radio" name="question1" value="green">
-            <label for="answer3">Power</label><br>
-
-            <input id="answer4" class="option" type="radio" name="question1" value="yellow">
-            <label for="answer4">Love</label><br>
+            <div class="answerContainer">
+                <input id="answer4" class="option" type="radio" name="question1" value="yellow">
+                <label for="answer4">Love</label>
+            </div>
         </form>
 
         <button class="house-next">NEXT</button>

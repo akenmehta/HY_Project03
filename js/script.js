@@ -1,41 +1,41 @@
 var houseQuestions = [
 	{
-		question: '2. You enter an enchanted garden. What would you be most curious to examine first?',
+		question: 'You enter an enchanted garden. What would you be most curious to examine first?',
 		red: 'The statue of an old wizard with a strangely twinkling eye',
 		green: 'The silver leafed tree bearing golden apples',
 		blue: 'The bubbling pool, in the depths of which something luminous is swirling',
 		yellow: 'The fat red toadstools that appear to be talking to each other'
 	},
 	{
-		question: '3. You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:',
+		question: 'You and two friends need to cross a bridge guarded by a river troll who insists on fighting one of you before he will let all of you pass. Do you:',
 		red: 'Volunteer to fight?',
 		green: 'Let the others fight as you merrily cross the bridge.',
 		blue: 'Attempt to confuse the troll into letting all three of you pass without fighting?',
 		yellow: 'Suggest drawing lots to decide which of you will fight?'
 	},
 	{
-		question: '4. A Muggle confronts you and says that they are sure you are a witch or wizard. Do you:',
+		question: 'A Muggle confronts you and says that they are sure you are a witch or wizard. Do you:',
 		red: 'Ask what makes them think so',
 		green: 'Agree, and ask whether they’d like a free sample of a jinx',
 		blue: 'Tell them that you are worried about their mental health, and offer to call a doctor',
 		yellow: 'Agree, and walk away, leaving them to wonder whether you are bluffing'
 	},
 	{
-		question: '5. What would your family say is your worst trait?',
+		question: 'What would your family say is your worst trait?',
 		red: 'Reckless – you don’t think before you act.',
 		green: 'Worst trait? Really? You have no bad traits.',
 		blue: 'A bit of a know-it-all.',
 		yellow: 'You\'re too nice for your own good.'                                                                
 	},
 	{
-		question: '6. If you could have any superpower, which would you have?',
+		question: 'If you could have any superpower, which would you have?',
 		red: 'Super strength or invincibility: all the better for adventuring!',
 		green: 'Mind control: then everyone will do exactly what you say!',
 		blue: 'The power of foresight: so you know what’s coming',
 		yellow: 'Invisibility.'
 	},
 	{
-		question: '7. Which of these would be the best pet EVER?',
+		question: 'Which of these would be the best pet EVER?',
 		red: 'A hippogriff: fierce, fast, and fearless!',
 		green: 'A snake or a lizard.',
 		blue: 'An owl or a phoenix: something clever.',
@@ -44,7 +44,7 @@ var houseQuestions = [
 ]
 var wandQuestions = [
 	{
-		question: '2. Which career would you pursue?',
+		question: 'Which career would you pursue?',
 		red: 'Auror',
 		green: 'Death Eater',
 		blue: 'Professor',
@@ -86,51 +86,58 @@ var petQuestions = [
 		green: 'Play with fire',
 		blue: 'Fly',
 		yellow: 'Eat'
+	},
+	{
+		question: 'What are you allergic to?',
+		red: 'Cuteness',
+		green: 'Hair',
+		blue: 'Roar',
+		yellow: 'Slime'
 	}
 ]
 var quotes = [
 	{
-		quote: 'It does not do to dwell on dreams and forget to live.',
+		quote: '" It does not do to dwell on dreams and forget to live "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.',
+		quote: '" It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'To the well-organized mind, death is but the next great adventure.',
+		quote: '" To the well-organized mind, death is but the next great adventure "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'It is our choices, Harry, that show what we truly are, far more than our abilities.',
+		quote: '" It is our choices, Harry, that show what we truly are, far more than our abilities "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'Just because you have the emotional range of a teaspoon doesn’t mean we all have.',
+		quote: '" Just because you have the emotional range of a teaspoon doesn’t mean we all have "',
 		author: '- Hermione Granger'
 	},
 	{
-		quote: 'Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?',
+		quote: '" Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real? "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'Words are in my not-so-humble opinion, the most inexhaustible form of magic we have, capable both of inflicting injury and remedying it',
+		quote: '" Words are in my not-so-humble opinion, the most inexhaustible form of magic we have, capable both of inflicting injury and remedying it "',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: 'We do not need magic to transform our world. We carry all of the power we need inside ourselves already',
+		quote: '" We do not need magic to transform our world. We carry all of the power we need inside ourselves already "',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: 'Whether you come back by page or by the big screen, Hogwarts will always be there to welcome you home',
+		quote: '" Whether you come back by page or by the big screen, Hogwarts will always be there to welcome you home "',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: 'You sort of start thinking anything\'s possible if you\'ve got enough nerve.',
+		quote: '" You sort of start thinking anything\'s possible if you\'ve got enough nerve "',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: 'Crikey, I\'d love a dragon for a pet.',
+		quote: '" Crikey, I\'d love a dragon for a pet "',
 		author: '- Rubeus Hagrid'
 	}
 ];
@@ -258,8 +265,9 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningHouse);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<h2>Congratulations! You're in ${finalWinner.house}!</h2>`);
-			$('.questions').append(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').append(`<h3>Congratulations! You're in <span class="houseWinner">${finalWinner.house}</span>!</h3>`);
+			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -304,8 +312,9 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningWand);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<h2>Congratulations! This wand is chosen you: "${finalWinner.wand}"!</h2>`);
-			$('.questions').append(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').append(`<h3>Congratulations! This wand has chosen you: <span class="wandWinner">${finalWinner.wand}</span>!</h3>`);
+			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -348,8 +357,9 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningPet);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<h2>Congratulations! You have chosen ${finalWinner.pet} as your life long partner!</h2>`);
-			$('.questions').append(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').append(`<h3>Congratulations! You have chosen <span class="petWinner">${finalWinner.pet}</span> as your life long partner!</h3>`);
+			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);
