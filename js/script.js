@@ -95,8 +95,21 @@ var blueCounter = 0;
 var yellowCounter = 0;
 
 function quizGenerator(quizName){
-	var userAnswer = $('input:checked').val();
+	quizCounters();
 
+	$('.questions h2').text(quizName[questionCounter].question);
+	$('label[for = "answer1"]').text(quizName[questionCounter].red);
+	$('label[for = "answer2"]').text(quizName[questionCounter].green);
+	$('label[for = "answer3"]').text(quizName[questionCounter].blue);
+	$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
+	
+	questionCounter++;
+	console.log(questionCounter);
+	console.log(redCounter, blueCounter, greenCounter, yellowCounter);
+
+}
+function quizCounters(){
+	var userAnswer = $('input:checked').val();
 	if(userAnswer === 'red')
 		redCounter++;
 	else if(userAnswer === 'blue')
@@ -105,20 +118,7 @@ function quizGenerator(quizName){
 		greenCounter++;
 	else if(userAnswer === 'yellow')
 		yellowCounter++;
-
-	
-	$('.questions h2').text(quizName[questionCounter].question);
-	$('label[for = "answer1"]').text(quizName[questionCounter].red);
-	$('label[for = "answer2"]').text(quizName[questionCounter].green);
-	$('label[for = "answer3"]').text(quizName[questionCounter].blue);
-	$('label[for = "answer4"]').text(quizName[questionCounter].yellow);
-	
-	questionCounter++;
-	console.log(userAnswer, questionCounter);
-	console.log(redCounter, blueCounter, greenCounter, yellowCounter);
-
 }
-
 function resetCounters(){
 	questionCounter = 0;
 	redCounter = 0;
@@ -147,6 +147,7 @@ $(document).ready(function(){
 		} 
 		
 		else{
+			quizCounters();
 			var winningHouse = [
 				{
 					house: 'gryffindor',
@@ -188,6 +189,7 @@ $(document).ready(function(){
 			quizGenerator(wandQuestions);
 		}
 		else{
+			quizCounters();
 			var winningWand = [
 				{
 					wand: 'Holly and Phoenix feather',
@@ -226,6 +228,7 @@ $(document).ready(function(){
 			quizGenerator(petQuestions);
 		}
 		else{
+			quizCounters();
 			var winningPet = [
 				{
 					pet: 'Blast-Ended Skrewt',
