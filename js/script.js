@@ -265,12 +265,13 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningHouse);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<div class="answer-image-container"><img src="${finalWinner.image}"></div>`);
 			$('.questions').append(`<h3>Congratulations! You're in </h3>
 				<h3 class="houseWinner">${finalWinner.house}!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
-			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
 			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="small" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
+			$('.house-next').css('display', 'none');
 
 			resetCounters();
 			console.log(questionCounter);
@@ -315,13 +316,13 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningWand);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<div class="answer-image-container"><img src="${finalWinner.image}"></div>`);
 			$('.questions').append(`<h3>Congratulations! <br> This wand has chosen you: </h3> 
 				<h3 class="wandWinner">${finalWinner.wand}!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
-			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
 			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="small" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
-
+			$('.wand-next').css('display', 'none');
 			resetCounters();
 			console.log(questionCounter);
 			console.log(redCounter, blueCounter, greenCounter, yellowCounter);
@@ -363,14 +364,20 @@ $(document).ready(function(){
 			var finalWinner = randomizeWinner(winningPet);
 
 			$('div.questions').removeClass('questions-background');
-			$('.questions').html(`<img src="${finalWinner.image}">`);
+			$('.questions').html(`<div class="answer-image-container"><img src="${finalWinner.image}"></div>`);
 			$('.questions').append(`<h3>Congratulations! You have chosen: </h3>
 			 <h3 class="petWinner">${finalWinner.pet}</h3>
 			 <h3> as your life long partner!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
-			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
 			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="small" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
-			// $('.questions').append(`</div>`);
+			$('.pet-next').css('display', 'none');
+			$('footer').css({
+				position: 'abosolute',
+				top: 0,
+				left: 0,
+				right: 0
+			});
 
 
 			resetCounters();
