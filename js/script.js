@@ -268,6 +268,7 @@ $(document).ready(function(){
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! You're in <span class="houseWinner">${finalWinner.house}</span>!</h3>`);
 			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.questions').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -315,6 +316,7 @@ $(document).ready(function(){
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! This wand has chosen you: <span class="wandWinner">${finalWinner.wand}</span>!</h3>`);
 			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.questions').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -360,6 +362,8 @@ $(document).ready(function(){
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! You have chosen <span class="petWinner">${finalWinner.pet}</span> as your life long partner!</h3>`);
 			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
+			$('.questions').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
+
 
 			resetCounters();
 			console.log(questionCounter);
