@@ -267,7 +267,7 @@ $(document).ready(function(){
 			$('div.questions').removeClass('questions-background');
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! You're in <span class="houseWinner">${finalWinner.house}</span>!</h3>`);
-			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
+			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -314,7 +314,7 @@ $(document).ready(function(){
 			$('div.questions').removeClass('questions-background');
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! This wand has chosen you: <span class="wandWinner">${finalWinner.wand}</span>!</h3>`);
-			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
+			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);
@@ -359,7 +359,7 @@ $(document).ready(function(){
 			$('div.questions').removeClass('questions-background');
 			$('.questions').html(`<img src="${finalWinner.image}">`);
 			$('.questions').append(`<h3>Congratulations! You have chosen <span class="petWinner">${finalWinner.pet}</span> as your life long partner!</h3>`);
-			$('.questions').append(`<a href='index.html'><button>Home</button></a>`);
+			$('.questions').append(`<a href='index.html'><button class="answerPageButton">Home</button></a>`);
 
 			resetCounters();
 			console.log(questionCounter);

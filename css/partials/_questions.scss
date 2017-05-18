@@ -1,10 +1,16 @@
+.questions-background{
+	background-image: url(../assets/Parchment.png) ;
+	background-repeat:no-repeat;
+	background-size: contain;
+	background-position:center;
+}
 .questions{
-	width: 650px;
-	margin: 0 auto;
+	max-width: 750px;
+	margin: 30px auto;
 	border: 1px solid red;
-	padding: 20px 50px;
+	padding: 120px 80px;
 	form {
-		padding: 0 20px;
+	
 	}
 	h2 {
 		font-family: 'Cabin', sans-serif;
@@ -14,7 +20,7 @@
 		font-family: 'Cabin', sans-serif;
 		font-size: 20px;
 	}
-	button {
+	button{
 		border: none;
 		padding: 10px 20px;
 		margin: 20px;
@@ -32,25 +38,30 @@
 		font-size: 25px;
 		font-weight: normal;
 		font-family: $global-questions-font;
-		.houseWinner {
-			
-		}
-		.wandWinner {
-
-		}
-		.petWinner {
-			font-family: $header-footer-font;
-			font-size: 35px;
-			margin: 0 
-		}
+		text-align: center;
+	}
+	.houseWinner {
+		font-family: $header-footer-font;
+		font-size: 35px;
+		margin: 0;
+	}
+	.wandWinner {
+		font-family: $header-footer-font;
+		font-size: 35px;
+		margin: 0;
+	}
+	.petWinner {
+		font-family: $header-footer-font;
+		font-size: 35px;
+		margin: 0;
 	}
 	img {
 		margin: 0 auto;
 		display: block;
 		border-radius: 30%;
 	}
-}
-.questions-background{
-	background: url(../assets/Parchment.png) no-repeat;
-	background-size: contain;
+	 .answerPageButton{
+	 	margin: 0 auto;
+		display: block;
+	 }
 }

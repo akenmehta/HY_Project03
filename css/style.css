@@ -132,13 +132,17 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.questions-background {
+  background-image: url(../assets/Parchment.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; }
+
 .questions {
-  width: 650px;
-  margin: 0 auto;
+  max-width: 750px;
+  margin: 30px auto;
   border: 1px solid red;
-  padding: 20px 50px; }
-  .questions form {
-    padding: 0 20px; }
+  padding: 120px 80px; }
   .questions h2 {
     font-family: 'Cabin', sans-serif;
     font-weight: normal; }
@@ -159,19 +163,27 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .questions h3 {
     font-size: 25px;
     font-weight: normal;
-    font-family: "Cabin", sans-serif; }
-    .questions h3 .petWinner {
-      font-family: "Great Vibes", sans-serif;
-      font-size: 35px;
-      margin: 0; }
+    font-family: "Cabin", sans-serif;
+    text-align: center; }
+  .questions .houseWinner {
+    font-family: "Great Vibes", sans-serif;
+    font-size: 35px;
+    margin: 0; }
+  .questions .wandWinner {
+    font-family: "Great Vibes", sans-serif;
+    font-size: 35px;
+    margin: 0; }
+  .questions .petWinner {
+    font-family: "Great Vibes", sans-serif;
+    font-size: 35px;
+    margin: 0; }
   .questions img {
     margin: 0 auto;
     display: block;
     border-radius: 30%; }
-
-.questions-background {
-  background: url(../assets/Parchment.png) no-repeat;
-  background-size: contain; }
+  .questions .answerPageButton {
+    margin: 0 auto;
+    display: block; }
 
 .wrapper {
   max-width: 1200px;
