@@ -1,7 +1,9 @@
 @import 'partials/setup';
 @import 'partials/variables';
 @import 'partials/questions';
-
+a{
+	text-decoration: none;
+}
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -13,19 +15,17 @@ header {
 	text-align: center;
 	background-color: black;
 	padding: 20px 0;
-	position: relative;
+	display: flex;
+	align-items: center;
 	h1 {
 		color: $global-gold;
 		font-family: $header-footer-font;
-		font-size: 80px;
+		font-size: 60px;
 		margin: 0;
-		widows: 100%;
+		width: 80%;
 	}
 	.logoContainer {
-		width: 100px;
-		position: absolute; 
-		top: 25px;
-		left: 25px;
+		width: 10%;
 		img {
 			width: 100%;
 		}
@@ -49,6 +49,35 @@ main  {
 		&:hover{
 			box-shadow: 2px 2px 20px #000;
 		}
+		@media (max-width: 940px){
+			flex-direction: row;
+			align-items: center;
+			width: 90%;
+			.gameImage{
+				width: 40%;
+			}
+			.gameText{
+				width: 60%;
+			}
+		}
+		@media (max-width: 760px){
+			flex-direction: column;
+			width: 60%;
+			.gameImage{
+				width: 100%;
+			}
+			.gameText{
+				width: 100%;
+			}
+		}
+	}
+	@media (max-width: 940px){
+			flex-direction: column;
+			align-items: center;
+	}
+	@media (max-width: 760px){
+			flex-direction: row;
+			flex-wrap: wrap;
 	}
 	p{
 		padding: 20px;
@@ -95,21 +124,21 @@ footer {
 }
 
 .magicWriting {
-	width: 80%;
+	width: 90%;
 	border-radius: 10px;
 	background-color: rgba(0, 122, 49, 0.84);
 	margin: 0 auto;
 	margin-top: 70px;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 	h2 {
 		font-family: "Satisfy", sans-serif;
-		font-size: 35px;
+		font-size: 25px;
 	}
 	span {
 		text-align: right;
 		display: block;
-		font-size: 20px;
+		font-size: 16px;
 		font-family: $global-questions-font;
 	}
 }

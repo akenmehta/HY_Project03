@@ -7,7 +7,6 @@
 .questions{
 	max-width: 750px;
 	margin: 30px auto;
-	border: 1px solid red;
 	padding: 120px 80px;
 	form {
 	
@@ -40,28 +39,20 @@
 		font-family: $global-questions-font;
 		text-align: center;
 	}
-	.houseWinner {
-		font-family: $header-footer-font;
+	.houseWinner, .wandWinner, .petWinner {
+		font-family: $global-questions-font;
 		font-size: 35px;
 		margin: 0;
-	}
-	.wandWinner {
-		font-family: $header-footer-font;
-		font-size: 35px;
-		margin: 0;
-	}
-	.petWinner {
-		font-family: $header-footer-font;
-		font-size: 35px;
-		margin: 0;
+		text-transform: uppercase;
 	}
 	img {
 		margin: 0 auto;
 		display: block;
 		border-radius: 30%;
 	}
-	 .answerPageButton{
-	 	margin: 0 auto;
-		display: block;
+	 .answerButtons{
+	 	display: flex;
+	 	justify-content: center;
+	 	align-items: center;
 	 }
 }

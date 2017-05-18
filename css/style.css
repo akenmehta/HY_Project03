@@ -141,7 +141,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .questions {
   max-width: 750px;
   margin: 30px auto;
-  border: 1px solid red;
   padding: 120px 80px; }
   .questions h2 {
     font-family: 'Cabin', sans-serif;
@@ -165,25 +164,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     font-weight: normal;
     font-family: "Cabin", sans-serif;
     text-align: center; }
-  .questions .houseWinner {
-    font-family: "Great Vibes", sans-serif;
+  .questions .houseWinner, .questions .wandWinner, .questions .petWinner {
+    font-family: "Cabin", sans-serif;
     font-size: 35px;
-    margin: 0; }
-  .questions .wandWinner {
-    font-family: "Great Vibes", sans-serif;
-    font-size: 35px;
-    margin: 0; }
-  .questions .petWinner {
-    font-family: "Great Vibes", sans-serif;
-    font-size: 35px;
-    margin: 0; }
+    margin: 0;
+    text-transform: uppercase; }
   .questions img {
     margin: 0 auto;
     display: block;
     border-radius: 30%; }
-  .questions .answerPageButton {
-    margin: 0 auto;
-    display: block; }
+  .questions .answerButtons {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+a {
+  text-decoration: none; }
 
 .wrapper {
   max-width: 1200px;
@@ -196,18 +198,20 @@ header {
   text-align: center;
   background-color: black;
   padding: 20px 0;
-  position: relative; }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
   header h1 {
     color: rgba(219, 146, 0, 0.83);
     font-family: "Great Vibes", sans-serif;
-    font-size: 80px;
+    font-size: 60px;
     margin: 0;
-    widows: 100%; }
+    width: 80%; }
   header .logoContainer {
-    width: 100px;
-    position: absolute;
-    top: 25px;
-    left: 25px; }
+    width: 10%; }
     header .logoContainer img {
       width: 100%; }
 
@@ -240,6 +244,45 @@ main {
     transition: all 1s; }
     main section:hover {
       box-shadow: 2px 2px 20px #000; }
+    @media (max-width: 940px) {
+      main section {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 90%; }
+        main section .gameImage {
+          width: 40%; }
+        main section .gameText {
+          width: 60%; } }
+    @media (max-width: 760px) {
+      main section {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 60%; }
+        main section .gameImage {
+          width: 100%; }
+        main section .gameText {
+          width: 100%; } }
+  @media (max-width: 940px) {
+    main {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; } }
+  @media (max-width: 760px) {
+    main {
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
   main p {
     padding: 20px;
     text-align: left;
@@ -278,18 +321,18 @@ footer {
   transition: all 1s; }
 
 .magicWriting {
-  width: 80%;
+  width: 90%;
   border-radius: 10px;
   background-color: rgba(0, 122, 49, 0.84);
   margin: 0 auto;
   margin-top: 70px;
-  padding: 20px;
+  padding: 10px;
   text-align: center; }
   .magicWriting h2 {
     font-family: "Satisfy", sans-serif;
-    font-size: 35px; }
+    font-size: 25px; }
   .magicWriting span {
     text-align: right;
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Cabin", sans-serif; }
