@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HP Quiz</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Great+Vibes|Satisfy" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
-		<header class="clearfix">
+		<audio autoplay loop>
+			<source src="assets/harry-potter-audio.mp3"></source>
+			Your browser does not support the audio file.
+		</audio>
+		<header>
 			<div class="logoContainer">
-				<img src="assets/harryPotterLogo.png" alt="">
+				<a href="index.html">
+					<img src="assets/harryPotterLogo.png" alt="">
+				</a>
 			</div>
 			<h1>Harry Potter Quiz Game</h1>
 		</header>
 
 		<div class="backgroundWrapper">
-
 			<section class="magicWriting">
 				<h2></h2>
 				<span></span>
@@ -57,7 +63,6 @@
 					</div>
 				</section>
 			</main>
-			
 		</div>
 
 		<footer>
@@ -66,6 +71,10 @@
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="js/script.js"></script>
-	</div>
+
+		<!-- Sorting hat questions were taken from: https://www.theguardian.com/childrens-books-site/quiz/2015/feb/05/harry-potter-night-quiz-sorting-hat-which-house -->
+		<!-- Wand questions were taken from: https://www.proprofs.com/quiz-school/story.php?title=harry-potter-wand-test_1 -->
+		<!-- Pics taken from harrypotter.wikia.com/ -->
+
 </body>
 </html>

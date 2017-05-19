@@ -142,7 +142,7 @@ var quotes = [
 	}
 ];
 
-var randomHomeQuote = randomQuotesIndex();
+
 var questionCounter = 0;
 var redCounter = 0;
 var greenCounter = 0;
@@ -150,12 +150,19 @@ var blueCounter = 0;
 var yellowCounter = 0; 
 var answerType = ['red', 'blue', 'green', 'yellow'];
 
+
 // returns random quotes object from the quotes array
 function randomQuotesIndex(){
 	var randomNum = Math.floor(Math.random() * quotes.length);
 	var randomQuote = quotes[randomNum];
-
 	return randomQuote;
+}
+
+//Generates random quotes on the index page after 7 seconds
+function quotesGenerator(){
+	var randomHomeQuote = randomQuotesIndex();
+	$('.magicWriting h2').text( randomHomeQuote.quote);
+	$('.magicWriting span').text( randomHomeQuote.author);
 }
 
 //Populates questions and answer from the selected 'questions' arrays
@@ -224,15 +231,14 @@ function randomizeAnswers(array) {
 
 $(document).ready(function(){
 
-	$('.magicWriting h2').text( randomHomeQuote.quote);
-
-	$('.magicWriting span').text( randomHomeQuote.author);
+	quotesGenerator();
+	setInterval( quotesGenerator, 7000);
 
 	$('.house-next').on('click', function(){
-		if (questionCounter !== houseQuestions.length) {
+		if (questionCounter !== houseQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(houseQuestions);
 		} 
-		else{
+		else if($('input:checked').val() !== undefined ){
 			quizCounters();
 
 			var winningHouse = [
@@ -282,10 +288,10 @@ $(document).ready(function(){
 	});
 
 	$('.wand-next').on('click', function(){
-		if (questionCounter !== wandQuestions.length) {
+		if (questionCounter !== wandQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(wandQuestions);
 		}
-		else{
+		else if($('input:checked').val() !== undefined ){
 			quizCounters();
 			var winningWand = [
 				{
@@ -330,10 +336,10 @@ $(document).ready(function(){
 	});
 
 	$('.pet-next').on('click', function(){
-		if (questionCounter !== petQuestions.length) {
+		if (questionCounter !== petQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(petQuestions);
 		}
-		else{
+		else if($('input:checked').val() !== undefined ){
 			quizCounters();
 			var winningPet = [
 				{
