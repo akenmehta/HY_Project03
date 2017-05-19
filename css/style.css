@@ -221,8 +221,16 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: #0084b4;
   color: #fff; }
 
+html {
+  cursor: url(../assets/wand-cursor.png), auto; }
+
 a {
   text-decoration: none; }
+  a:visited {
+    color: inherit; }
+
+button {
+  outline: none; }
 
 .wrapper {
   max-width: 900px;

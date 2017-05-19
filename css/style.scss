@@ -1,9 +1,22 @@
 @import 'partials/setup';
 @import 'partials/variables';
 @import 'partials/questions';
+
+html { 	cursor: url(../assets/wand-cursor.png), auto;
+}
+
+
+
 a{
 	text-decoration: none;
+	&:visited {
+		color: inherit;
+	}
 }
+button {
+	outline: none;
+}
+
 .wrapper {
 	max-width: 900px;
 	margin: 0 auto;
