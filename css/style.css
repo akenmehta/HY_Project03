@@ -135,28 +135,37 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .questions-background {
   background-image: url(../assets/Parchment.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center; }
 
 .questions {
   max-width: 750px;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding: 30px;
   padding: 120px 80px; }
+  @media (max-width: 760px) {
+    .questions {
+      padding: 30px 50px;
+      width: 90%; } }
+  .questions form {
+    width: 100%; }
   .questions h2 {
     font-family: 'Cabin', sans-serif;
     font-weight: normal; }
+    @media (max-width: 760px) {
+      .questions h2 {
+        font-size: 20px; } }
   .questions label {
     font-family: 'Cabin', sans-serif;
     font-size: 20px; }
-  .questions button {
-    border: none;
-    padding: 10px 20px;
-    margin: 20px;
-    background-color: #000;
-    color: rgba(219, 146, 0, 0.83);
-    transition: all 1s; }
+    @media (max-width: 760px) {
+      .questions label {
+        font-size: 16px; } }
   .questions .answerContainer {
     margin: 20px; }
+    @media (max-width: 760px) {
+      .questions .answerContainer {
+        margin: 10px; } }
   .questions input {
     margin-right: 10px; }
   .questions h3 {
@@ -169,6 +178,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 35px;
     margin: 0;
     text-transform: uppercase; }
+    @media (max-width: 480px) {
+      .questions .houseWinner, .questions .wandWinner, .questions .petWinner {
+        font-size: 25px; } }
   .questions img {
     margin: 0 auto;
     display: block;
@@ -184,15 +196,37 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     -ms-flex-align: center;
     align-items: center; }
 
+.next-button {
+  border: none;
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: #000;
+  color: rgba(219, 146, 0, 0.83);
+  transition: all 1s; }
+  @media (max-width: 760px) {
+    .next-button {
+      margin: 5px;
+      margin-bottom: 20px; } }
+
+.backgroundWrapper {
+  background-color: rgba(151, 2, 2, 0.93);
+  padding: 30px; }
+
+.answer-image-container {
+  width: 50%;
+  margin: 0 auto; }
+  @media (max-width: 480px) {
+    .answer-image-container {
+      width: 75%; } }
+  .answer-image-container img {
+    width: 100%; }
+
 a {
   text-decoration: none; }
 
 .wrapper {
   max-width: 900px;
   margin: 0 auto; }
-
-body {
-  background-color: rgba(151, 2, 2, 0.93); }
 
 header {
   text-align: center;
@@ -204,14 +238,27 @@ header {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media (max-width: 480px) {
+    header {
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
   header h1 {
     color: rgba(219, 146, 0, 0.83);
     font-family: "Great Vibes", sans-serif;
     font-size: 60px;
     margin: 0;
     width: 80%; }
+    @media (max-width: 760px) {
+      header h1 {
+        font-size: 40px; } }
   header .logoContainer {
-    width: 10%; }
+    width: 10%;
+    margin-left: 20px; }
+    @media (max-width: 480px) {
+      header .logoContainer {
+        display: none;
+        width: 50px; } }
     header .logoContainer img {
       width: 100%; }
 
@@ -220,11 +267,15 @@ main {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: rgba(151, 2, 2, 0.93); }
   main section {
-    width: calc(33.3% - 30px);
+    width: 30%;
     margin: 15px;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -252,21 +303,12 @@ main {
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center;
-        width: 90%; }
-        main section .gameImage {
-          width: 40%; }
-        main section .gameText {
-          width: 60%; } }
+        width: 90%; } }
     @media (max-width: 760px) {
       main section {
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
-        flex-direction: column;
-        width: 60%; }
-        main section .gameImage {
-          width: 100%; }
-        main section .gameText {
-          width: 100%; } }
+        flex-direction: column; } }
   @media (max-width: 940px) {
     main {
       -webkit-flex-direction: column;
@@ -282,22 +324,41 @@ main {
       flex-direction: row;
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      width: 70%; } }
+  @media (max-width: 480px) {
+    main {
+      width: 90%; } }
   main p {
     padding: 20px;
     text-align: left;
     font-family: "Cabin", sans-serif;
     font-size: 20px;
-    line-height: 1.4em; }
+    line-height: 1.4em;
+    margin: 0; }
 
 .gameImage {
   width: 100%;
   padding: 10px; }
+  @media (max-width: 940px) {
+    .gameImage {
+      width: 40%; } }
+  @media (max-width: 760px) {
+    .gameImage {
+      width: 100%; } }
   .gameImage img {
     width: 100%;
     display: block;
     border-radius: 10px;
     border: 5px solid #333; }
+
+@media (max-width: 940px) {
+  .gameText {
+    width: 60%; } }
+
+@media (max-width: 760px) {
+  .gameText {
+    width: 100%; } }
 
 footer {
   text-align: center;
@@ -323,11 +384,11 @@ footer {
 .magicWriting {
   width: 90%;
   border-radius: 10px;
-  background-color: rgba(0, 122, 49, 0.84);
   margin: 0 auto;
   margin-top: 70px;
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+  border: solid 4px black; }
   .magicWriting h2 {
     font-family: "Satisfy", sans-serif;
     font-size: 25px; }
