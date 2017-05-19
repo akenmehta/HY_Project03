@@ -205,12 +205,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   transition: all 1s; }
   @media (max-width: 760px) {
     .next-button {
-      margin: 5px;
       margin-bottom: 20px; } }
-
-.backgroundWrapper {
-  background-color: rgba(151, 2, 2, 0.93);
-  padding: 30px; }
 
 .answer-image-container {
   width: 50%;
@@ -221,6 +216,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .answer-image-container img {
     width: 100%; }
 
+.twitter-share-button {
+  padding: 9px 20px;
+  background-color: #0084b4;
+  color: #fff; }
+
 a {
   text-decoration: none; }
 
@@ -228,10 +228,17 @@ a {
   max-width: 900px;
   margin: 0 auto; }
 
+.backgroundWrapper {
+  background-color: rgba(151, 2, 2, 0.93);
+  padding: 30px; }
+
+audio {
+  display: none; }
+
 header {
   text-align: center;
   background-color: black;
-  padding: 20px 0;
+  padding: 10px 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -246,14 +253,14 @@ header {
   header h1 {
     color: rgba(219, 146, 0, 0.83);
     font-family: "Great Vibes", sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     margin: 0;
     width: 80%; }
     @media (max-width: 760px) {
       header h1 {
         font-size: 40px; } }
   header .logoContainer {
-    width: 10%;
+    width: 6%;
     margin-left: 20px; }
     @media (max-width: 480px) {
       header .logoContainer {
@@ -272,8 +279,7 @@ main {
   flex-direction: row;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
-  justify-content: space-between;
-  background-color: rgba(151, 2, 2, 0.93); }
+  justify-content: space-between; }
   main section {
     width: 30%;
     margin: 15px;
@@ -363,7 +369,7 @@ main {
 footer {
   text-align: center;
   background-color: black;
-  padding: 20px 0; }
+  padding: 10px 0; }
   footer p {
     font-family: "Great Vibes", sans-serif;
     font-size: 20px;
@@ -380,9 +386,12 @@ footer {
   background-color: #000;
   color: rgba(219, 146, 0, 0.83);
   transition: all 1s; }
+  @media (max-width: 480px) {
+    .homeButton {
+      font-size: 12px; } }
 
 .magicWriting {
-  width: 90%;
+  width: 85%;
   border-radius: 10px;
   margin: 0 auto;
   margin-top: 70px;
@@ -397,3 +406,6 @@ footer {
     display: block;
     font-size: 16px;
     font-family: "Cabin", sans-serif; }
+  @media (max-width: 480px) {
+    .magicWriting {
+      display: none; } }

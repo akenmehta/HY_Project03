@@ -8,13 +8,17 @@ a{
 	max-width: 900px;
 	margin: 0 auto;
 }
-body{
-	// background-color: rgba(151, 2, 2, 0.93);
+.backgroundWrapper {
+	background-color: rgba(151, 2, 2, 0.93);
+	padding: 30px;
+}
+audio{
+	display: none;
 }
 header {
 	text-align: center;
 	background-color: black;
-	padding: 20px 0;
+	padding: 10px 0;
 	display: flex;
 	align-items: center;
 	@media (max-width: 480px) {
@@ -23,7 +27,7 @@ header {
 	h1 {
 		color: $global-gold;
 		font-family: $header-footer-font;
-		font-size: 60px;
+		font-size: 50px;
 		margin: 0;
 		width: 80%;
 		@media (max-width: 760px) {
@@ -34,7 +38,7 @@ header {
 		}
 	}
 	.logoContainer {
-		width: 10%;
+		width: 6%;
 		margin-left: 20px;
 		@media (max-width: 480px) {
 			display: none;
@@ -50,7 +54,6 @@ main  {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	background-color: rgba(151, 2, 2, 0.93);
 	section {
 		width: 30%;
 		margin: 15px;
@@ -125,7 +128,7 @@ main  {
 footer {
 	text-align: center;
 	background-color: black;
-	padding: 20px 0;
+	padding: 10px 0;
 	p {
 		font-family: $header-footer-font;
 		font-size: 20px;
@@ -144,10 +147,13 @@ footer {
 	background-color: #000;
 	color: $global-gold;
 	transition: all 1s;
+	@media (max-width: 480px){
+		font-size: 12px;
+	}
 }
 
 .magicWriting {
-	width: 90%;
+	width: 85%;
 	border-radius: 10px;
 	margin: 0 auto;
 	margin-top: 70px;
@@ -163,6 +169,9 @@ footer {
 		display: block;
 		font-size: 16px;
 		font-family: $global-questions-font;
+	}
+	@media(max-width: 480px){
+		display: none;
 	}
 }
 

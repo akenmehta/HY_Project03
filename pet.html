@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HP Quiz</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Great+Vibes" rel="stylesheet">
@@ -9,7 +10,9 @@
 <body>
 	<header class="clearfix">
 		<div class="logoContainer">
-			<img src="assets/harryPotterLogo.png" alt="">
+			<a href="index.html">
+				<img src="assets/harryPotterLogo.png" alt="">
+			</a>
 		</div>
 		<h1>Harry Potter Quiz Game</h1>
 	</header>
@@ -17,30 +20,30 @@
 	<div class="backgroundWrapper">
 		<div class="questions questions-background">
 		    <h2>What do you like to do in your spare time?</h2>
-		    <form class="options">
+		    <form class="pet-options">
 		    	<div class="answerContainer">
-			        <input id="answer1"	class="option" type="radio" name="question1" value="red"> 
+			        <input id="answer1"	type="radio" name="question1" value="red"> 
 			        <label for="answer1">Do Sport</label>
 		    	</div>
 		        
 		        <div class="answerContainer">
-			        <input id="answer2" class="option" type="radio" name="question1" value="blue">
+			        <input id="answer2" type="radio" name="question1" value="blue">
 			        <label for="answer2">Play Quidditch</label>
 		        </div>
 				
 				<div class="answerContainer">
-			        <input id="answer3" class="option" type="radio" name="question1" value="green">
+			        <input id="answer3" type="radio" name="question1" value="green">
 			        <label for="answer3">Rob Gringotts</label>
 				</div>
 				
 				<div class="answerContainer">
-			        <input id="answer4" class="option" type="radio" name="question1" value="yellow">
+			        <input id="answer4" type="radio" name="question1" value="yellow">
 			        <label for="answer4">Sleep</label>
 				</div>
 		    </form>
 		    <div class="answerButtons"></div>
+		    <button class="pet-next next-button">NEXT</button>
 		</div>
-	    <button class="pet-next next-button">NEXT</button>
 	</div>
 
 	<footer>
