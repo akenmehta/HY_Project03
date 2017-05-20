@@ -97,47 +97,47 @@ var petQuestions = [
 ]
 var quotes = [
 	{
-		quote: '" It does not do to dwell on dreams and forget to live "',
+		quote: '"It does not do to dwell on dreams and forget to live"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends "',
+		quote: '"It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" To the well-organized mind, death is but the next great adventure "',
+		quote: '"To the well-organized mind, death is but the next great adventure"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" It is our choices, Harry, that show what we truly are, far more than our abilities "',
+		quote: '"It is our choices, Harry, that show what we truly are, far more than our abilities"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" Just because you have the emotional range of a teaspoon doesn’t mean we all have "',
+		quote: '"Just because you have the emotional range of a teaspoon doesn’t mean we all have"',
 		author: '- Hermione Granger'
 	},
 	{
-		quote: '" Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real? "',
+		quote: '"Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" Words are in my not-so-humble opinion, the most inexhaustible form of magic we have, capable both of inflicting injury and remedying it "',
+		quote: '"Words are in my not-so-humble opinion, the most inexhaustible form of magic we have, capable both of inflicting injury and remedying it"',
 		author: '- Albus Dumbledore'
 	},
 	{
-		quote: '" We do not need magic to transform our world. We carry all of the power we need inside ourselves already "',
+		quote: '"We do not need magic to transform our world. We carry all of the power we need inside ourselves already"',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: '" Whether you come back by page or by the big screen, Hogwarts will always be there to welcome you home "',
+		quote: '"Whether you come back by page or by the big screen, Hogwarts will always be there to welcome you home"',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: '" You sort of start thinking anything\'s possible if you\'ve got enough nerve "',
+		quote: '"You sort of start thinking anything\'s possible if you\'ve got enough nerve"',
 		author: '- J.K. Rowling'
 	},
 	{
-		quote: '" Crikey, I\'d love a dragon for a pet "',
+		quote: '"Crikey, I\'d love a dragon for a pet"',
 		author: '- Rubeus Hagrid'
 	}
 ];
@@ -179,7 +179,6 @@ function quizGenerator(quizName){
 	$('label[for = "answer4"]').text(quizName[questionCounter][randomAnswers[3] ] );
 	
 	//resetting the answer arrays for the next question
-	// $('input').attr('checked', true);
 	randomAnswers = [];
 	answerType = ['red', 'blue', 'green', 'yellow'];
 	questionCounter++; 

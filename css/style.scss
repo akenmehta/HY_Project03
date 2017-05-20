@@ -4,11 +4,6 @@
 
 html { 	cursor: url(../assets/wand-cursor.png), auto;
 }
-
-html{
-	height: 100vh;
-}
-
 a{
 	text-decoration: none;
 	&:visited {
@@ -25,7 +20,7 @@ button {
 }
 .backgroundWrapper {
 	background-color: rgba(151, 2, 2, 0.93);
-	padding: 30px;
+	padding-top: 50px;
 }
 audio{
 	display: none;
@@ -65,7 +60,7 @@ header {
 	}
 }
 main  {
-	padding: 50px 0;
+	padding: 40px 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -99,10 +94,12 @@ main  {
 	@media (max-width: 760px){
 			flex-direction: row;
 			flex-wrap: wrap;
-			width: 70%;
+			padding: 0 0 20px 0;
+			width: 400px;
 	}
 	@media (max-width: 480px){
 			width: 90%;
+			padding: 0 0 20px 0;
 	}
 	p{
 		padding: 20px;
@@ -145,15 +142,15 @@ footer {
 	background-color: black;
 	padding: 10px 0;
 	p {
-		font-family: $header-footer-font;
-		font-size: 20px;
+		font-family: "Satisfy", sans-serif;
+		font-size: 14px;
 		color: $global-gold;
 		margin: 0;
 	}
 }
 
 .homeButton{
-	font-size: 20px;
+	font-size: 16px;
 	font-family: $global-questions-font;
 	text-transform: uppercase;
 	border: none;
@@ -168,10 +165,10 @@ footer {
 }
 
 .magicWriting {
-	width: 85%;
+	width: 90%;
+	height: 150px;
 	border-radius: 10px;
 	margin: 0 auto;
-	margin-top: 70px;
 	padding: 10px;
 	text-align: center;
 	border: solid 4px black;
@@ -184,6 +181,13 @@ footer {
 		display: block;
 		font-size: 16px;
 		font-family: $global-questions-font;
+		padding-right: 10px;
+	}
+	@media(max-width: 940px){
+		height: 175px;
+	}
+	@media(max-width: 760px){
+		display: none;
 	}
 	@media(max-width: 480px){
 		display: none;
