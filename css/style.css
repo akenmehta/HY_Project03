@@ -237,7 +237,7 @@ button {
 
 .backgroundWrapper {
   background-color: rgba(151, 2, 2, 0.93);
-  padding-top: 50px; }
+  padding: 60px 0; }
 
 audio {
   display: none; }
@@ -277,7 +277,7 @@ header {
       width: 100%; }
 
 main {
-  padding: 40px 0;
+  padding-top: 40px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
