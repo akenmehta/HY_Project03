@@ -149,17 +149,15 @@ var blueCounter = 0;
 var yellowCounter = 0; 
 var answerType = ['red', 'blue', 'green', 'yellow'];
 
-
-// returns random quotes object from the quotes array
-function randomQuotesIndex(){
-	var randomNum = Math.floor(Math.random() * quotes.length);
-	var randomQuote = quotes[randomNum];
-	return randomQuote;
+// Returns a random element from an array
+function getRandomElementFromArray (array) {
+	var randomNum = Math.floor(Math.random() * array.length);
+	return array[randomNum];
 }
 
 //Generates random quotes on the index page after 7 seconds
 function quotesGenerator(){
-	var randomHomeQuote = randomQuotesIndex();
+	var randomHomeQuote = getRandomElementFromArray(quotes);
 	$('.magicWriting h2').text( randomHomeQuote.quote);
 	$('.magicWriting span').text( randomHomeQuote.author);
 }
@@ -172,11 +170,16 @@ function quizGenerator(quizName){
 	//randomizing the order of the answers
 	var randomAnswers = randomizeAnswers(answerType);
 
+	// Places the appropriate question along with the answers and correpsonding values in a random order
 	$('.questions h2').text(quizName[questionCounter].question);
 	$('label[for = "answer1"]').text(quizName[questionCounter][randomAnswers[0] ] );
+	$('#answer1').prop('value', `${randomAnswers[0]}`);
 	$('label[for = "answer2"]').text(quizName[questionCounter][randomAnswers[1] ] );
+	$('#answer2').prop('value', `${randomAnswers[1]}`);
 	$('label[for = "answer3"]').text(quizName[questionCounter][randomAnswers[2] ] );
+	$('#answer3').prop('value', `${randomAnswers[2]}`);
 	$('label[for = "answer4"]').text(quizName[questionCounter][randomAnswers[3] ] );
+	$('#answer4').prop('value', `${randomAnswers[3]}`);
 	
 	//resetting the answer arrays for the next question
 	randomAnswers = [];
@@ -212,8 +215,7 @@ function randomizeWinner (quizName) {
 			winnerList.push(quizName[key]);
 		}
 	}
-	var finalWinner = winnerList[Math.floor(Math.random() * winnerList.length)];
-	console.log(finalWinner);
+	var finalWinner = getRandomElementFromArray(winnerList);
 	return finalWinner;
 }
 
@@ -226,7 +228,6 @@ function randomizeAnswers(array) {
 		randomizedArray.push(array[randomIndex]);
 		array.splice(randomIndex, 1);
 	}
-	
 	return randomizedArray;
 }
 
@@ -236,7 +237,10 @@ $(document).ready(function(){
 	setInterval( quotesGenerator, 7000);
 
 	$('.house-next').on('click', function(){
-		if (questionCounter !== houseQuestions.length && $('input:checked').val() !== undefined ) {
+		if ($('#answer1').prop('checked') === false && $('#answer2').prop('checked') === false && $('#answer3').prop('checked') === false && $('#answer4').prop('checked') === false) {
+			alert('Please select an answer to proceed to the next question');
+		}
+		else if (questionCounter !== houseQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(houseQuestions);
 		} 
 		//$('input:checked').val() !== undefined
@@ -290,7 +294,10 @@ $(document).ready(function(){
 	});
 
 	$('.wand-next').on('click', function(){
-		if (questionCounter !== wandQuestions.length && $('input:checked').val() !== undefined ) {
+		if ($('#answer1').prop('checked') === false && $('#answer2').prop('checked') === false && $('#answer3').prop('checked') === false && $('#answer4').prop('checked') === false) {
+			alert('Please select an answer to proceed to the next question');
+		}
+		else if (questionCounter !== wandQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(wandQuestions);
 		}
 		else if($('input:checked').val() !== undefined ){
@@ -338,7 +345,10 @@ $(document).ready(function(){
 	});
 
 	$('.pet-next').on('click', function(){
-		if (questionCounter !== petQuestions.length && $('input:checked').val() !== undefined ) {
+		if ($('#answer1').prop('checked') === false && $('#answer2').prop('checked') === false && $('#answer3').prop('checked') === false && $('#answer4').prop('checked') === false) {
+			alert('Please select an answer to proceed to the next question');
+		}
+		else if (questionCounter !== petQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(petQuestions);
 		}
 		else if($('input:checked').val() !== undefined ){
@@ -386,7 +396,6 @@ $(document).ready(function(){
 				left: 0,
 				right: 0
 			});
-
 
 			resetCounters();
 			console.log(questionCounter);
