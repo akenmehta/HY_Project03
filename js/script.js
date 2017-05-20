@@ -167,7 +167,8 @@ function quotesGenerator(){
 //Populates questions and answer from the selected 'questions' arrays
 function quizGenerator(quizName){
 	quizCounters();
-	$('input').attr('checked', false);
+	//unchecking all the radio buttons after every click
+	$('input[type="radio"]').prop('checked', false);
 	//randomizing the order of the answers
 	var randomAnswers = randomizeAnswers(answerType);
 
@@ -178,7 +179,7 @@ function quizGenerator(quizName){
 	$('label[for = "answer4"]').text(quizName[questionCounter][randomAnswers[3] ] );
 	
 	//resetting the answer arrays for the next question
-	$('input').attr('checked', true);
+	// $('input').attr('checked', true);
 	randomAnswers = [];
 	answerType = ['red', 'blue', 'green', 'yellow'];
 	questionCounter++; 
@@ -239,9 +240,10 @@ $(document).ready(function(){
 		if (questionCounter !== houseQuestions.length && $('input:checked').val() !== undefined ) {
 			quizGenerator(houseQuestions);
 		} 
-		else if($('input:checked').val() !== undefined ){
-			quizCounters();
+		//$('input:checked').val() !== undefined
+		else if( $('input:checked').val() !== undefined ){
 
+			quizCounters();
 			var winningHouse = [
 				{
 					house: 'gryffindor',

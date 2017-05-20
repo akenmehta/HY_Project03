@@ -141,7 +141,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .questions {
   max-width: 750px;
   margin: 0 auto;
-  padding: 30px;
   padding: 120px 80px; }
   @media (max-width: 760px) {
     .questions {
@@ -223,6 +222,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   cursor: url(../assets/wand-cursor.png), auto; }
+
+html {
+  height: 100vh; }
 
 a {
   text-decoration: none; }
