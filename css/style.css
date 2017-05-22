@@ -135,17 +135,21 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .questions-background {
   background-image: url(../assets/Parchment.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto auto;
   background-position: center; }
 
 .questions {
   max-width: 750px;
-  margin: 0 auto;
+  margin: 55px auto;
   padding: 120px 80px; }
   @media (max-width: 760px) {
     .questions {
-      padding: 30px 50px;
+      padding: 35px 50px;
+      margin: 30px auto;
       width: 90%; } }
+  @media (max-width: 360px) {
+    .questions {
+      margin: 0px auto; } }
   .questions form {
     width: 100%; }
   .questions h2 {
@@ -220,13 +224,13 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: #0084b4;
   color: #fff; }
 
-html {
-  cursor: url(../assets/wand-cursor.png), auto; }
-
 a {
   text-decoration: none; }
   a:visited {
     color: inherit; }
+
+body {
+  height: 100vh; }
 
 button {
   outline: none; }
@@ -237,7 +241,7 @@ button {
 
 .backgroundWrapper {
   background-color: rgba(151, 2, 2, 0.93);
-  padding: 60px 0; }
+  padding: 80px 0; }
 
 audio {
   display: none; }

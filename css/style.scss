@@ -2,13 +2,14 @@
 @import 'partials/variables';
 @import 'partials/questions';
 
-html { 	cursor: url(../assets/wand-cursor.png), auto;
-}
 a{
 	text-decoration: none;
 	&:visited {
 		color: inherit;
 	}
+}
+body{
+	height: 100vh;
 }
 button {
 	outline: none;
@@ -20,7 +21,7 @@ button {
 }
 .backgroundWrapper {
 	background-color: rgba(151, 2, 2, 0.93);
-	padding: 60px 0;
+	padding: 80px 0;
 }
 audio{
 	display: none;
