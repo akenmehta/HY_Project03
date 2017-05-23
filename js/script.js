@@ -162,6 +162,21 @@ function quotesGenerator(){
 	$('.magicWriting span').text( randomHomeQuote.author);
 }
 
+// returns random quotes object from the quotes array
+function randomQuotesIndex(){
+	var randomNum = Math.floor(Math.random() * quotes.length);
+	var randomQuote = quotes[randomNum];
+	return randomQuote;
+>>>>>>> 5d4996319cd1d17a60b942fb5ae4a2d287d627cc
+}
+
+//Generates random quotes on the index page after 7 seconds
+function quotesGenerator(){
+	var randomHomeQuote = randomQuotesIndex();
+	$('.magicWriting h2').text( randomHomeQuote.quote);
+	$('.magicWriting span').text( randomHomeQuote.author);
+}
+
 //Populates questions and answer from the selected 'questions' arrays
 function quizGenerator(quizName){
 	quizCounters();
@@ -245,7 +260,6 @@ $(document).ready(function(){
 		} 
 		//$('input:checked').val() !== undefined
 		else if( $('input:checked').val() !== undefined ){
-
 			quizCounters();
 			var winningHouse = [
 				{

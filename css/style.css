@@ -241,7 +241,11 @@ button {
 
 .backgroundWrapper {
   background-color: rgba(151, 2, 2, 0.93);
+<<<<<<< HEAD
   padding: 80px 0; }
+=======
+  padding: 30px; }
+>>>>>>> 5d4996319cd1d17a60b942fb5ae4a2d287d627cc
 
 audio {
   display: none; }
@@ -404,8 +408,12 @@ footer {
       font-size: 12px; } }
 
 .magicWriting {
+<<<<<<< HEAD
   width: 90%;
   height: 150px;
+=======
+  width: 85%;
+>>>>>>> 5d4996319cd1d17a60b942fb5ae4a2d287d627cc
   border-radius: 10px;
   margin: 0 auto;
   padding: 10px;
@@ -418,6 +426,7 @@ footer {
     text-align: right;
     display: block;
     font-size: 16px;
+<<<<<<< HEAD
     font-family: "Cabin", sans-serif;
     padding-right: 10px; }
   @media (max-width: 940px) {
@@ -426,6 +435,9 @@ footer {
   @media (max-width: 760px) {
     .magicWriting {
       display: none; } }
+=======
+    font-family: "Cabin", sans-serif; }
+>>>>>>> 5d4996319cd1d17a60b942fb5ae4a2d287d627cc
   @media (max-width: 480px) {
     .magicWriting {
       display: none; } }
