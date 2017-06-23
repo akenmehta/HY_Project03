@@ -282,7 +282,7 @@ $(document).ready(function(){
 				<h3 class="houseWinner">${finalWinner.house}!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
 			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
-			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
+			// $('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 			$('.house-next').css('display', 'none');
 
 			resetCounters();
@@ -336,7 +336,7 @@ $(document).ready(function(){
 				<h3 class="wandWinner">${finalWinner.wand}!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
 			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
-			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
+			// $('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 			$('.wand-next').css('display', 'none');
 			resetCounters();
 			console.log(questionCounter);
@@ -388,7 +388,7 @@ $(document).ready(function(){
 			 <h3> as your life long partner!</h3>`);
 			$('.questions').append(`<div class="answerButtons">`);
 			$('.answerButtons').append(`<a href='index.html'><button class="answerPageButton next-button">Home</button></a>`);
-			$('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
+			// $('.answerButtons').append(`<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 			$('.pet-next').css('display', 'none');
 			$('footer').css({
 				position: 'abosolute',
